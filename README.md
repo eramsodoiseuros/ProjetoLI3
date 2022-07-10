@@ -10,3 +10,5 @@ O projeto consistiu em construir um sistema de gestão de vendas, respondendo a 
 programação imperativa.
 
 # Fase 2 - reestruturação do código para Java
+
+A organização do nosso projeto baseia-se no modelo MVC (model, view, controller).
