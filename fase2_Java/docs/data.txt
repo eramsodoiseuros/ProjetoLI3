@@ -1,0 +1,205 @@
+	
+	leitura : BR de 1 milhão
+Tempo de execução de uma Leitura de um ficheiro 0.159205399 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 0.5467553 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 1.3324823 s
+
+	leitura : BR de 3 milhões
+Tempo de execução de uma Leitura de um ficheiro 0.2369245 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 0.9941555 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 3.2344612 s
+
+	leitura : BR de 5 milhões
+Tempo de execução de uma Leitura de um ficheiro 0.417060301 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 1.622973499 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 5.424139 s
+
+	leitura : F de 1 milhão
+Tempo de execução de uma Leitura de um ficheiro 0.6893777 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 0.816988801 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 1.7442228 s
+
+	leitura : F de 3 milhões
+Tempo de execução de uma Leitura de um ficheiro 1.749350599 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 2.4275949 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 4.991374501 s
+
+	leitura : F de 5 milhões
+Tempo de execução de uma Leitura de um ficheiro 2.900504499 s
+Tempo de execução de uma Leitura de um ficheiro com parsing de linhas 4.0633116 s
+Tempo de execução de uma Leitura de um ficheiro com parsing e validação de linhas 8.3791079 s
+
+	
+	LOAD TIME: 
+Tempo de leitura do ficheiro de 1Milhão: 14.237167 s | 13.446561 s | 13.249174 s
+Tempo de leitura do ficheiro de 3Milhões: 32.529863 s | 32.068507 s | 29.544123 s
+Tempo de leitura do ficheiro de 5Milhões: 54.509865 s | 51.657807 s | 47.472612 s
+
+	QUERIES:
+	1: Os tempos de execução são sempre muito semelhantes, já que a query 1, na nossa estrutura, depende do número de produtos e não do ficheiro de vendas
+	
+	Conclusão, o ficheiro de vendas podia ter 1Bilião de linhas, a execução da query 1 iria sempre depender do número de produtos.
+	
+	Estratégia implementada: cada produto têm um campo boleano, que refere se este foi ou não vendido, a query simplesmente percorre os produtos e agrega os não comprados.
+Tempo de leitura com o ficheiro de 1Milhão: 
+	(total) 0.046436 s | 0.033651 s | 0.032491 s
+	(total) 0.0464365 s | 0.0336512 s | 0.0324913 s
+	(por letra) 
+		A: 0.036554 s
+		B: 0.034598 s
+		R: 0.035049 s
+		Z: 0.034504 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.046215 s | 0.032299 s | 0.032416  s 
+	(total) 0.0462153 s | 0.0322999 s |  0.0324167  s 
+	(por letra) 
+		A: 0.036426 s
+		B: 0.035410 s
+		R: 0.035294 s
+		Z: 0.036192 s
+
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.050059 s | 0.039558 s | 0.032093 s 
+	(total) 0.0500596 s | 0.0395584 s |  0.0320939 s 
+	(por letra) 
+		A: 0.036140 s
+		B: 0.037049 s
+		R: 0.038685 s
+		Z: 0.036232 s
+
+
+	2: Os tempos de execução são sempre muito semelhantes e quanto mais vezes se corre a query, mais rápida é a sua execução
+Tempo de leitura com o ficheiro de 1Milhão: 
+	(total) 0.007834 s | 0.002314 s | 0.001618 s | 0.001581 s
+	(por filial) 0.005308 s | 0.001730 s | 0.001693 s | 0.001574 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.007509 s | 0.001404 | 0.001452 s
+	(por filial) 0.005462 s | 0.002048 s | 0.001436 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.007914 s | 0.002605 s | 0.001521 s
+	(por filial) 0.004984 s | 0.001759 s | 0.001411 s
+
+
+
+
+	3:
+Tempo de leitura com o ficheiro de 1Milhão: 
+	(total) 0.00005 s
+	(por filial) 0.00003 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.00006 s
+	(por filial) 0.00004 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.00006 s
+	(por mês) 0.00002 s
+
+
+
+
+	4:
+Tempo de leitura com o ficheiro de 1Milhão: 
+	(total) 0.083070 s | 0.073391 s
+	(por filial) 0.066947 s | 0.064982 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.168600 s | 0.139456 s
+	(por filial) 0.135212 s | 0.113833 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.072449 s | 0.063431 s
+	(por mês) 0.064659 s | 0.063407 s
+
+
+
+
+	5:
+Tempo de leitura com o ficheiro de 1Milhão: 
+	(total) 0.002082 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.002684 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.003497 s
+
+
+
+
+	6:
+Tempo de leitura com o ficheiro de 1Milhão:
+	(10) 0.066221 s
+	(100) 0.067887 s
+	(1000) 0.070492 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(10) 0.131942 s
+	(100) 0.104677 s
+	(1000) 0.121125 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(10) 0.342400 s
+	(100) 0.160671 s
+	(1000) 0.154867 s
+
+
+
+
+	7:
+Tempo de leitura com o ficheiro de 1Milhão:
+	(total) 0.000230 s
+	(filial) 0.000126 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(total) 0.000389 s
+	(filial) 0.000083 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(total) 0.000343 s
+	(filial) 0.000055 s
+
+
+
+	8:
+Tempo de leitura com o ficheiro de 1Milhão:
+	(10) 0.000354 s
+	(100) 0.001797 s
+	(1000) 0.014427 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	(10) 0.000872 s
+	(100) 0.005237 s
+	(1000) 0.047491 s
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	(10) 0.001179 s
+	(100) 0.009739 s
+	(1000) 0.102833 s
+
+
+
+	9:
+Tempo de leitura com o ficheiro de 1Milhão:
+	0.049818 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	0.075901
+	
+Tempo de leitura com o ficheiro de 5Milhões: 
+	0.081648 s
+	
+
+
+	10:
+Tempo de leitura com o ficheiro de 1Milhão:
+	0.399423 s
+
+Tempo de leitura com o ficheiro de 3Milhões:
+	0.406881 s
+
+Tempo de leitura com o ficheiro de 5Milhões:
+	0.529157 s
